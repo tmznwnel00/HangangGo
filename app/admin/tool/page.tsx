@@ -1,5 +1,4 @@
-import KakaoMap from "@/app/ui/main/kakao-map"
-import Nav from "@/app/ui/main/nav"
+import KakaoMapTool from "@/app/ui/admin/kakao-map-tool"
 
 export default function Home() {
   return (
@@ -7,12 +6,10 @@ export default function Home() {
       <div className="relative h-full">
         <div className="w-full h-full bg-sky-300">
           <div className="w-full h-full">
-            <KakaoMap />
+            <KakaoMapTool />
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 z-10 w-full p-10">
-          <Nav />
-        </div>
+        <div className="absolute bottom-0 left-0 z-10">icon line</div>
       </div>
     </main>
   )
