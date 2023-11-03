@@ -11,7 +11,7 @@ export async function getSectionsInformation() {
 }
 
 export async function getMapInformation() {
-    
+    noStore();
 
     return {
         sections,
@@ -20,5 +20,6 @@ export async function getMapInformation() {
 }
 
 export async function getCollections() {
+    noStore();
     return collections
 }

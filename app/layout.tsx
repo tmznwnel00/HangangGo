@@ -29,7 +29,7 @@ export default function RootLayout({
           src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.KAKAO_API_KEY}&autoload=false`}
           async></script>
       </head>
-      <body className={`${inter.className} ${notoSansKr.className} bg-zinc-200`}>{children}
+      <body className={`${inter.className} ${notoSansKr.className} bg-sky-100`}>{children}
       </body>
     </html>
   )

@@ -5,7 +5,8 @@ import { useState, useEffect } from "react"
 
 type Props = {
     imgLink: string;
-    unique: number;
+    remark: string;
+    name: string;
 }
 
 const uniqueTable = {
@@ -14,8 +15,18 @@ const uniqueTable = {
     2: "border-purple-400",
     3: "border-rose-500",
 }
-export default function SingleMarker({imgLink, unique}:Props){
+
+const remark2unique = {
+    '기후변화 생물지표종': 3,
+    '일반': 1,
+    '우점': 1,
+    '법적보호종': 2,
+    '군락': 0
+}
+
+export default function SingleMarker({imgLink, remark, name}:Props){
     const [imgURL, setImgURL] = useState();
+    const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
         const func = async () => {
@@ -28,9 +39,15 @@ export default function SingleMarker({imgLink, unique}:Props){
     }, []);
 
     return (
-        <div className={`w-10 h-10 border-4 m-2 ${uniqueTable[unique]}  rounded-full bg-cover`} style={{
-            backgroundImage: `url(${imgURL})`
-        }}>  
+        <div className="flex flex-col justify-center items-center">
+            <div className=" w-28 h-6 bg-zinc-200 text-center rounded-md z-30" style={{visibility: isVisible? 'visible':'hidden'}}>
+                {name}
+            </div>
+            <div className={`w-14 h-14 border-4 m-2 ${uniqueTable[remark2unique[remark]]}  rounded-full bg-cover`} style={{
+                backgroundImage: `url(${imgURL})` }}
+                onMouseOver={() => setIsVisible(true)} onMouseOut={() => setIsVisible(false)}
+            >  
+            </div>
         </div>
     );
 }
