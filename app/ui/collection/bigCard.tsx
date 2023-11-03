@@ -9,7 +9,7 @@ const uniqueTable = {
     2: "border-purple-400",
     3: "border-rose-500",
 }
-export default function Card({ collection, clickFunction }:{ collection: any, clickFunction: Function}){
+export default function BigCard({ collection }:{ collection: any}){
     const [titleHeight, setTitleHeight ] = useState(0);
     const titleBlockRef = useRef(null)
     const [imgURL, setImgURL] = useState();
@@ -31,11 +31,10 @@ export default function Card({ collection, clickFunction }:{ collection: any, cl
 
     return (
         <div className="flex flex-col aspect-[4/5]  from-sky-500 via-emerald-400 to-cyan-300 bg-gradient-to-tr basis-1/2"
-            style={{padding:"4%"}}
-            onClick={()=>{clickFunction(collection)}}
+            style={{padding:"2%"}}
         >
-            <div className="w-full flex flex-row justify-between basis-1/6 mb-1" ref={titleBlockRef} >
-                <div className="flex items-center basis-4/5 bg-zinc-200 justify-between font-bold pl-3">
+            <div className="w-full flex flex-row justify-between basis-1/6 mb-3" ref={titleBlockRef} >
+                <div className="flex items-center basis-4/5 bg-zinc-200 justify-between font-bold pl-3 text-2xl">
                     {collection.korean_name}
                 </div>
                 <div className=" border-x-transparent border-y-zinc-200" style={{borderBottomWidth:`${titleHeight}px`,borderRightWidth:`${titleHeight/5}px`}}></div>

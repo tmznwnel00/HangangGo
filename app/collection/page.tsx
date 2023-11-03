@@ -1,15 +1,14 @@
-import Card from "@/app/ui/collection/card"
+import CardList from "@/app/ui/collection/cardList";
+import { getCollections } from "@/app/lib/data"
 
-export default function Home() {
+export default async function Home() {
+  // const collections = await getCollections();
+  const collections = await (await fetch("http://27.119.34.53:8080/api/collections?user_id=1", {cache: 'no-store'})).json()
+  const valuesOfColections = Object.values(collections)
+  
   return (
-    <main className="flex flex-col min-h-screen h-screen items-center">
-        <div className="grid grid-cols-4 gap-x-2 gap-y-8 max-w-3xl w-full">
-            {[1,2,3,4,5,6,7,8,9,10].map((num,i)=>{
-                return(
-                    <Card key={i}/>
-                )
-            })}
-        </div>
+    <main className="flex flex-col min-h-screen h-screen items-center m-2">
+        <CardList collections={valuesOfColections} />
     </main>
   )
 }

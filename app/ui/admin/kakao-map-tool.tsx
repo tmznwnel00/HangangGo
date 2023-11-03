@@ -18,7 +18,7 @@ export default function KakaoMapTool() {
                 center={center}
                 className="w-full h-full"
                 level={4}
-                zoomable={false}
+                zoomable={true}
                 onCenterChanged={(map) => setCenter({
                     lat: map.getCenter().getLat(),
                     lng: map.getCenter().getLng(),

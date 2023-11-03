@@ -1,4 +1,4 @@
-import { sections, species, speciesImageSet, mapInformations } from '@/app/lib/placeholder-data';
+import { sections, species, collections } from '@/app/lib/placeholder-data';
 import { unstable_noStore as noStore } from 'next/cache';
 import { Coordinate, Section } from '@/app/lib/definitions';
 
@@ -15,6 +15,10 @@ export async function getMapInformation() {
 
     return {
         sections,
-        species
+        species,
     }
+}
+
+export async function getCollections() {
+    return collections
 }

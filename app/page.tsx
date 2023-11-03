@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main className="flex flex-col min-h-screen h-screen">
       <div className="relative h-full">
-        <div className="w-full h-full bg-sky-300">
+        <div className="w-full h-full">
           <div className="w-full h-full">
             <KakaoMap />
           </div>

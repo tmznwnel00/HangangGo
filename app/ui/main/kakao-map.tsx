@@ -4,7 +4,7 @@ import { getSectionsInformation, getMapInformation } from '@/app/lib/data';
 import SingleMarker from '@/app/ui/main/single-marker';
 
 export default async function KakaoMap() {
-    const center = { lat: 37.51081, lng: 126.982197 }
+    const center = { lat: 37.538662451247546, lng: 127.02656148941806 }
     const mapInfo = await getMapInformation();
 
     return (
