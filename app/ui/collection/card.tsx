@@ -30,7 +30,7 @@ const categoryIconTable = {
 
 export default function Card({ collection, clickFunction }:{ collection: any, clickFunction: Function}){
     const [titleHeight, setTitleHeight ] = useState(0);
-    const titleBlockRef = useRef(null)
+    const titleBlockRef:any = useRef(null)
     const [imgURL, setImgURL] = useState();
 
     useEffect(() => {
@@ -49,7 +49,7 @@ export default function Card({ collection, clickFunction }:{ collection: any, cl
     },[])
 
     return (
-        <div className={`flex flex-col aspect-[4/5] ${uniqueTable[remark2unique[collection.remark]]} bg-gradient-to-tr basis-1/2
+        <div className={`flex flex-col aspect-[4/5] ${uniqueTable[remark2unique[collection.remark as keyof typeof remark2unique] as keyof typeof uniqueTable]} bg-gradient-to-tr basis-1/2
          cursor-pointer hover:shadow-lg`}
             style={{padding:"4%"}}
             onClick={()=>{clickFunction(collection)}}
@@ -62,7 +62,7 @@ export default function Card({ collection, clickFunction }:{ collection: any, cl
                 <div className="flex items-center basis-1/5 text-end justify-center">
                     <Image 
                         alt="icon"
-                        src={`/assets/${categoryIconTable[collection.category]}`}
+                        src={`/assets/${categoryIconTable[collection.category as keyof typeof categoryIconTable]}`}
                         width={25}
                         height={25}
                     />

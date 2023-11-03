@@ -49,7 +49,7 @@ export default function CardList({collections}:{collections:Array<any>}) {
     return (
         <>
             <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-2 gap-y-8 max-w-3xl w-full">
-                {collections.sort((a,b)=>(remark2unique[b.remark]-remark2unique[a.remark])).map((collection,i)=>{
+                {collections.sort((a,b)=>(remark2unique[b.remark as keyof typeof remark2unique]-remark2unique[a.remark as keyof typeof remark2unique])).map((collection,i)=>{
                 return(
                     <Card key={i} collection={collection} 
                         clickFunction={(collection:any)=>{

@@ -43,7 +43,7 @@ export default function SingleMarker({imgLink, remark, name}:Props){
             <div className=" w-28 h-6 bg-zinc-200 text-center rounded-md z-30" style={{visibility: isVisible? 'visible':'hidden'}}>
                 {name}
             </div>
-            <div className={`w-14 h-14 border-4 m-2 ${uniqueTable[remark2unique[remark]]}  rounded-full bg-cover`} style={{
+            <div className={`w-14 h-14 border-4 m-2 ${uniqueTable[remark2unique[remark as keyof typeof remark2unique] as keyof typeof uniqueTable]}  rounded-full bg-cover`} style={{
                 backgroundImage: `url(${imgURL})` }}
                 onMouseOver={() => setIsVisible(true)} onMouseOut={() => setIsVisible(false)}
             >  
