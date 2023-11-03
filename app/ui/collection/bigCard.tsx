@@ -49,7 +49,7 @@ export default function BigCard({ collection }:{ collection: any}){
     },[])
 
     return (
-        <div className={`flex flex-col aspect-[4/5]  ${uniqueTable[remark2unique[collection.remark]]} bg-gradient-to-tr grow`}
+        <div className={`flex flex-col aspect-[4/5]  ${uniqueTable[remark2unique[collection.remark as keyof typeof remark2unique] as keyof typeof uniqueTable]} bg-gradient-to-tr grow`}
             style={{padding:"2%"}}
         >
             <div className="w-full flex flex-row justify-between basis-1/6 mb-3" ref={titleBlockRef} >
@@ -60,7 +60,7 @@ export default function BigCard({ collection }:{ collection: any}){
                 <div className="flex items-center basis-1/5 text-end justify-center">
                     <Image 
                         alt="icon"
-                        src={`/assets/${categoryIconTable[collection.category]}`}
+                        src={`/assets/${categoryIconTable[collection.category as keyof typeof categoryIconTable]}`}
                         width={40}
                         height={40}
                     />
