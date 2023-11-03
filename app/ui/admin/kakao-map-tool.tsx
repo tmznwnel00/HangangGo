@@ -28,10 +28,10 @@ export default function KakaoMapTool() {
                         lat: mouseEvent.latLng.getLat(),
                         lng: mouseEvent.latLng.getLng(),
                     })
-                    setPstack([...pStack, {
-                        lat: mouseEvent.latLng.getLat(),
-                        lng: mouseEvent.latLng.getLng(),
-                    }])
+                    // setPstack([...pStack, {
+                    //     lat: mouseEvent.latLng.getLat(),
+                    //     lng: mouseEvent.latLng.getLng(),
+                    // }])
                     console.log(pStack)
                 }}
             >
